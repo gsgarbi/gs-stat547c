@@ -1,12 +1,6 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Template for STAT 547C Final Project Outline
-% Author: Ben Bloem-Reddy <benbr@stat.ubc.ca>
-% Date: Oct. 17, 2019
-% Acknowledgments: ETH, Peter Orbanz, John Cunningham
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \documentclass[]{STAT_547C}
 \usepackage{STAT_547C}
+
 % NOTE: change the name and email address to your name in STAT_547C.sty
 
 \usepackage{booktabs}
@@ -15,40 +9,39 @@
 \usepackage[sorting=none,backend=biber,bibstyle=alphabetic,citestyle=alphabetic,giveninits=true,natbib=true]{biblatex}
 \bibliography{../../ref/STAT_547C.bib} % add the title and location of your bibliography file
 
+\usepackage{hyperref}
+
 \begin{document}
 
-% NOTE: You will replace the title below with your actual Title.
-\makeGenericHeader{Conditional Independence in Computational Statistics \\and Machine Learning}{Project Outline}
+\makeGenericHeader{Optimum Monte-Carlo Sampling Using Markov Chains \\ With Applications to Bootstrapping}{Project Outline}
 \vspace{-2cm}
 
 
 %%%%%%%%%%%%%%%%%%%
 \section{Title}
 
-The working title of my project is \emph{Conditional Independence in Computational Statistics and Machine Learning}.  
+The working title of my project is \emph{
+Optimum Monte-Carlo Sampling Using Markov Chains with Applications to Bootstrapping
+}.  
 
 %%%%%%%%%%%%%%%%%%%
 \section{Background}
 
-Conditional independence is a key concept in probability, especially in statistical applications. The classic paper by \citet{Dawid:1979:CondIndStatTheory} presents core ideas of statistics in terms of conditional independence. Those ideas are particularly relevant to statistical theory: estimation and hypothesis testing, identifiability, and predictive sufficiency. In modern data analysis, the importance of conditional independence seems to have grown, especially in the context of computationally intensive methods in statistics and machine learning. I am interested in a literature review of the role played by conditional independence in modern data analysis, particularly on computationally intensive methods, and in initial steps towards formalizing the relationship between computational complexity, notions of statistical efficiency, and conditional independence.
+Bootstrapping is a relatively well-understood and widely used re-sampling method basically consisting of independent re sampling steps with replacement. The paper by Peskun, P. H., however, makes us wonder if we can somehow improve (in the sense used by Peskun) the bootstrapping method by using a \textbf{dependent} re-sample step.
 
 %%%%%%%%%%%%%%%%%%%
 \section{Technical aspects}
 
-The project will draw on technical aspects of the following areas: conditioning and disintegration, stochastic optimization, graphical models, computational complexity theory.
+The project will draw on technical aspects of the following areas: transition kernels, conditional expectations, sampling methods, statistical computing.
 
 
 %%%%%%%%%%%%%%%%%%%
 \section{Literature}
 
-The key references for this project are:
+The key reference for this project is:
 
 \begin{itemize}
-  \item \cite{Dawid:1980:CondIndStatOp}, as mentioned above.
-  \item \cite{Dawid:1979:CondIndStatTheory} is a technical version of \cite{Dawid:1980:CondIndStatOp}, with additional material.
-  \item \cite[][Ch.~6]{Kallenberg:2002} is a key technical reference for conditioning.
-  \item \cite[][Ch.~8]{Bishop:2006} is a gentle introduction to graphical models; \cite{Lauritzen:1996:GraphMod,Koller:Friedman:2009:PGM} are complete references.
-  \item Based on a preliminary literature search, some references for methods that rely on conditional independence: stochastic optimization \cite{Bottou:2010} and stochastic variational inference \cite{Hoffman:etal:2013:SVI}; efficient (lifted) inference in statistical relational models \cite{Niepert:Domingos,Niepert:vdBroeck:2014:TractExch}
+\item \citet{Peskun, P. H. ``Optimum Monte-Carlo Sampling Using Markov Chains.'' Biometrika, vol. 60, no. 3, 1973, pp. 607-612. JSTOR}, \href{www.jstor.org/stable/2335011}{www.jstor.org/stable/2335011}
 \end{itemize}
 
 
@@ -57,20 +50,28 @@ The key references for this project are:
 
 I will carry out this project with the following sequence of steps: 
 \begin{enumerate}
-  \item I will map ideas presented in a statistical theoretical framework in the papers of \citet{Dawid:1979:CondIndStatTheory,Dawid:1980:CondIndStatOp} to one that takes into account computational requirements of  inference algorithms, with a focus on sufficiency and adequacy.
-  \item I will review methods from computational statistics and machine learning that rely on conditional independence. 
-  \item I will focus on one of these methods for an in-depth study of the effects of conditional independence on computational complexity.
+	\item Formulate a mathematically precise interpretation of my research question
+	\item Give a practical introduction to Markov Chains and bootstrapping
+	\item Give special attention to formalization and notation for Markov Chains and bootstrapping within the scope of the project
+  \item Map the main ideas presented by Peskun, P.H.
+  \item Connect the paper by Peskun, P.H. to bootstrapping
+  \item Provide exercises
+  \item Provide an application on Python
 \end{enumerate}
 
 
 %%%%%%%%%%%%%%%%%%%
 \section{Why I'm interested in this topic}
 
-I am interested in doing research that applies probability to problems in machine learning, and this seems like a great way to get started. 
+I like that the research question is not too hard to understand, but it seems to be an unanswered problem. It also covers some of the theory we are seeing in class and can help me practice working with a higher level of mathematical formality. I don't know if it counts, but I am curious to see what I can learn from this project.
 
 
 %%%%%%%%%%%%%%%%%%%
 \printbibliography
+\section{References}
+\begin{itemize}
+\item \citet{Peskun, P. H. ``Optimum Monte-Carlo Sampling Using Markov Chains.'' Biometrika, vol. 60, no. 3, 1973, pp. 607-612. JSTOR}, \href{www.jstor.org/stable/2335011}{www.jstor.org/stable/2335011}
+\end{itemize}
 
 
 \end{document}
