@@ -3,3 +3,46 @@
 % Exercises section
 
 \section{Exercises}
+
+We use the state notation described in part 2 when not stated otherwise.
+
+\begin{enumerate}
+\item Exercise:
+
+\begin{enumerate}
+\item How would you define the identity matrix in the context of kernels so that it behaves as the identity in multiplication? 
+\item Show that your definition is consistent with the properties of kernels given in part 1.
+\end{enumerate}
+
+
+
+
+%2. Assume a sample i_1...i_n is greater than j_1...j_n if the number with algorithms composed by i_1, ..., i_n is greater than the one composed by j_1, ..., j_n. Example: 131 is greater than 122. Define your kernel with the following sampling step: "randomly pick a different, larger sample".
+
+\item Exercise:
+
+Let $E = \{1, 2, ..., n\}$. Let a state $j = j_1...j_n$ be accessible from a state $i = i_1...i_n$ if $\{j_1, ..., j_n\} \subset E \setminus \{i_1, ..., i_n\} $. Define the kernel $K(x, \{y\})$ as: uniformly pick an accessible state y from state x. 
+
+a) List (or draw) the states that are connected to 112.
+
+b) Argue that this chain is not irreducible.
+
+c) If you were to simulate such a chain, how can you make irreducible by not changing the kernel "too much" (I mean, try not to create a whole new kernel)?
+
+\textbf{Exercise:} 
+
+a) Come up with a way to describe our state space different from the way described in part 2.
+
+b) How would you represent the elements 123 and 221 from the example in section 2.1?
+
+c) Using your notation, how many elements would your state space have? 
+
+\textbf{Answer:} One possibility is $i_1 ... i_n$, where$ i_k$ counts the number of times element k is picked. Notice that, in this case, $\sum i_k = n$. 
+
+\item Completely describe in Kernel notation for n = 3.
+
+Prove theorem in the case of finite state spaces
+
+\end{enumerate}
+
+

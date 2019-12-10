@@ -1,0 +1,3 @@
+[submodule "src/dependent_bootstrap"]
+	path = src/dependent_bootstrap
+	url = https://github.com/gsgarbi/dependent_bootstrap

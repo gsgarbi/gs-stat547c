@@ -3,3 +3,46 @@
 % open questions section
 
 \section{Open questions and research directions}
+
+\subsection{Research question}
+
+Our goal is to change the sample step described in 1.1 into a step that assigns probabilities of picking states that now \textbf{depend on the present sample} in a very particular way. By doing that, we \textit{hope} to reduce the variance of our estimator $\tilde{I}$ when compared to using the traditional step discussed in 1.1. Our main way to create those new kernels will be to keep the kernel from connecting any state to itself. Intuitively, this will prompt our chain to visit more states, increasing the precision of our estimate and reducing its variance, as pointed out in the discussion of theorem 2.1.1 of Optimum Monte-Carlo Sampling Using Markov Chains.
+
+
+
+We will now narrow down this general definition according to our context and discuss each of the terms involved:
+
+\begin{enumerate}
+
+\item Sample Spaces (and sigma-algebra): \\
+In our context of bootstrapping, E and F will be finite and discrete. Both will be equal to the state space with all possible bootstrap samples\footnote{The transition idea will be a bit lost here if you prefer to see that way as we are having our 'transitions' in the same space, which I will simply call E.}. A natural choice for $\calE$ is $2^E$, which will denote the power set of E. We still need a concrete description of our state space in the bootstrapping case. How we represent our state space is actually up to us to choose. Say we are initially given the following samples $S_0 = \{s_1, ..., s_n\}$. We can choose to denote, for instance, this set as $123...n$. In the example below, we start with the set of samples $\{1.67, 2.3, 2.5\}$. After our first bootstrap step, we pick the 
+
+\textbf{Example:}
+
+$
+S_0 = \{1.67, 2.3, 2.5\} := 123 \\
+S_1 = \{2.3, 2.3, 1.67\} := 221
+$
+
+Our state space will be then be the set of all possible permutations with repetitions of 1, 2, ..., n.
+
+\item Kernel K: \\ 
+Our kernel K will also have some restrictions. The condition in \ref{kernel_section} b) will be extended to:  K(x,B) is a \textbf{probability} measure: K will always take non-negative values and be such that $K(x,E) = 1, \forall x \in E.$ This type of kernel is called a Markov or stochastic kernel.
+
+\end{enumerate}
+
+
+
+\subsection{Re-sample step}
+
+Given a sample, we now wish to choose a new way to select the next one, in such way that it depends on the previous sample only. Using kernels, that means that we need to assign a probability to each singleton in $\calE$, i.e, each of our bootstrap samples (or states). This will be enough as any other element of $\epsilon$ can be expressed as a disjoint union of singletons. Assigning those probabilities, or equivalently, the values of the kernel, can be done in many different ways. However, based on our motivational paper, we will choose to select ways that avoid re-sampling the same state again. Perhaps the simplest one is to select one of the other states uniformly, as we show in the example below:
+
+\textbf{Example:}
+
+Let $S$ be the set of all singletons in B (i.e, our state space) and n be the number of initial samples we are given before we start bootstrapping. First, notice that $S \subset \calE$.
+For all x in E, for all s in $S - \{x\}$, $K(x, \{s\}) = \dfrac{1}{n^n-1}$. Naturally, we still need to assign a probability for x to return to itself and that will be 0, i.e, $K(x,x) = 0$.
+
+
+
+\subsection{Next steps}
+

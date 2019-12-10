@@ -6,12 +6,16 @@
 \usepackage{booktabs}
 \usepackage{amsmath,amsthm,amssymb,amsfonts}
 
+\DeclareMathOperator{\End}{End}
+
 \usepackage[sorting=none,backend=biber,bibstyle=alphabetic,citestyle=alphabetic,giveninits=true,natbib=true]{biblatex}
 \bibliography{../../ref/STAT_547C.bib} % add the title and location of your bibliography file
 
 \usepackage{hyperref}
 
 \begin{document}
+
+$\End$
 
 \makeGenericHeader{Optimum Monte-Carlo Sampling Using Markov Chains \\ With Applications to Bootstrapping}{Project Outline}
 \vspace{-2cm}
@@ -27,7 +31,7 @@ Optimum Monte-Carlo Sampling Using Markov Chains with Applications to Bootstrapp
 %%%%%%%%%%%%%%%%%%%
 \section{Background}
 
-Bootstrapping is a relatively well-understood and widely used re-sampling method basically consisting of independent re sampling steps with replacement. The paper by Peskun, P. H., however, makes us wonder if we can somehow improve (in the sense used by Peskun) the bootstrapping method by using a \textbf{dependent} re-sample step.
+
 
 %%%%%%%%%%%%%%%%%%%
 \section{Technical aspects}
@@ -72,6 +76,7 @@ I like that the research question is not too hard to understand, but it seems to
 \begin{itemize}
 \item \citet{Peskun, P. H. ``Optimum Monte-Carlo Sampling Using Markov Chains.'' Biometrika, vol. 60, no. 3, 1973, pp. 607-612. JSTOR}, \href{www.jstor.org/stable/2335011}{www.jstor.org/stable/2335011}
 \end{itemize}
+
 
 
 \end{document}
