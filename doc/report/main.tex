@@ -6,6 +6,8 @@
 
 % Note: You will get an empty bibliography warning when compiling until you include a citation.
 
+
+
 \documentclass[10pt]{article}
 \input{macros}
 \input{header}
@@ -13,12 +15,14 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+
 % your title/author/date information go here
-\title{\LaTeX\ Template for STAT 547C Final Project} % replace with your title
+\title{Optimum Monte-Carlo Sampling Using Markov Chains
+With Applications to Bootstrapping} % replace with your title
 \author{Giorgio Sgarbi} % replace with your name
 \date{\today} % replace with your submission date
 
-\bibliography{../../ref/STAT_547C.bib} % add the title of your bibliography file
 
 % start of document
 \begin{document}
@@ -33,6 +37,8 @@
 % open questions section
 \include{sections/open-questions}
 
+\include{sections/temp_bib}
+
 %%%% appendix
 \clearpage
 \appendix
@@ -43,7 +49,14 @@
 % any other appendix sections
 
 
+
 % bibliography
-\printbibliography
+%\printbibliography
+%Even after adding a citation, I get the following errors:
+%I found no \bibdata command---while reading file main.aux
+%I found no \bibstyle command---while reading file main.aux
+
+
+
 
 \end{document}
