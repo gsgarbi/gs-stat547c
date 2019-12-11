@@ -4,9 +4,9 @@
 
 \section{Open questions and research directions}
 
-\subsection{Research question}
+\subsection{Research question and goals}
 
-Our goal is to change the sample step in the bootstrap procedure described in 1.1 into a step that assigns probabilities of picking states, with those probabilities \textbf{depending on the present sample} in such a way that our sampling is optimized. By "optimized", we mean we want to reduce the variance of our estimator $\tilde{I}$ when compared to using the traditional step discussed in 1.1. To measure our accuracy or how "optimal" we are, we will measure the quantity \textbf{v}, defined in the previous question, in our simulations, with low values of it indicating a better estimation. Our main way to create those new kernels will be to keep the kernel from connecting any state to itself. Intuitively, this will prompt our chain to visit more states, increasing the precision of our estimate and reducing its variance, as pointed out in the discussion of theorem 2.1.1 of Optimum Monte-Carlo Sampling Using Markov Chains.
+Our goal is to change the sample step in the bootstrap procedure described in 1.1 using a kernel that assigns probabilities of picking states, with those probabilities now \textbf{depending on the present sample} in such a way that our sampling is optimized. By "optimized", we mean we want to reduce the asymptotic variance \textbf{$v$} of our estimator $\tilde{I}$, as defined in 1.3, when compared to using the traditional bootstrapping discussed in 1.1. To numerically measure our accuracy or how "optimal" we are, we will measure the quantity \textbf{$v$} in our simulations, with low values of it indicating a better estimation. Our main way to create those new kernels will be to keep the kernel from connecting any state to itself. Intuitively, this will prompt our chain to visit more states, increasing the precision of our estimate and reducing its variance, as pointed out in the discussion of Theorem 2.1.1 from Optimum Monte-Carlo Sampling Using Markov Chains, \Peskun.
 
 \subsection{Gathering our tools}
 We will now narrow down this general definition according to our context and discuss each of the terms involved:
