@@ -4,7 +4,7 @@
 
 \section{Exercises}
 
-\textbf{Instructions:} Some exercises allow more than one possible answer - in those cases, an example of such an answer is provided as solution. We use the state notation described unless stated otherwise. 
+\textbf{Instructions:} Some exercises allow more than one possible answer - in those cases, an example of such an answer is provided as solution. We use the state notation described unless stated otherwise. We use the measurable spaces E and F (or just E if E=F) and their sigma-algebras as we defined in part 1.
 
 \begin{Exercise}
 \begin{enumerate}[label=(\alph*)]
@@ -55,18 +55,19 @@ Let $E = \{1, 2, ..., n\}$. Let a state $j = j_1...j_n$ be accessible from a sta
 \begin{enumerate}[label=(\alph*)]
 \item List (or draw) the states that communicate with 1441.
 \item Argue that this chain is not irreducible.
-\item If you were to simulate such a chain, how can you make irreducible by not changing the kernel "too much" (I mean, try not to create a whole new kernel)?
+\item If you were to simulate such a chain, how can you make it irreducible without changing the kernel "too much" (I mean, try not to create a whole new kernel)?
 \end{enumerate}
 \end{Exercise}
 \begin{Answer}
 \begin{enumerate}[label=(\alph*)]
 \item The values that don't show up in 1441 are 1 and 2, so the the states that communicate with 1441 are: 2222, 2223, 2232, 2233, 2322, 2323, 2333, 3333.
-\item The chain is not irreducible because no state communicate with 1234.
+\item The chain is not irreducible because no state communicates with 1234.
 \item The chain works fine, except for this problem with state 1234, so we need to find a way for other states to reach it and for them to be reached by it. One possibility is to always give a small possibility p for any state to access it and a uniform chance for it to access any of the other $4^4-1$ states. Any p is fine as long as the kernel stays a probability measure.
 \end{enumerate}
 \end{Answer}
 
-\textbf{\uppercase{PLEASE TURN PAGE FOR ANSWERS}}
+\vspace{8cm}
+\centerline{\textbf{\uppercase{PLEASE TURN PAGE FOR ANSWERS}}}
 
 %2. Assume a sample i_1...i_n is greater than j_1...j_n if the number with algorithms composed by i_1, ..., i_n is greater than the one composed by j_1, ..., j_n. Example: 131 is greater than 122. Define your kernel with the following sampling step: "randomly pick a different, larger sample".
 
