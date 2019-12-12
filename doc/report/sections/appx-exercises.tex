@@ -4,12 +4,12 @@
 
 \section{Exercises}
 
-\textbf{Instructions:} Some exercises allow more than one possible answer - in those cases, an example of such an answer is provided as solution. We use the state notation described unless stated otherwise. We use the measurable spaces E and F (or just E if E=F) and their sigma-algebras as we defined in part 1.
+\textbf{Instructions:} Some exercises allow more than one possible answer - in those cases, an example of such an answer is provided as solution. We use the standard state notation described in section 2 unless stated otherwise. We use the measurable spaces E and F (or just E if E=F) and their sigma-algebras as we defined in part 1.
 
 \begin{Exercise}
 \begin{enumerate}[label=(\alph*)]
-\item How would you define the identity kernel so that it behaves as expected with respected to the kernel operations we defined? 
-\item Go back to section 1.2. Show that your definition is consistent with the properties of kernels given in 1.2.1. You can use the same notation given in that section.
+\item How would you define the identity kernel so that it behaves as expected with respect to the kernel operations we defined? 
+\item Go back to section 1.2. Show that your definition is consistent with the properties of kernels given in 1.2.1.
 \end{enumerate}
 \end{Exercise}
 \begin{Answer}
@@ -34,33 +34,33 @@ I(x, B) = \begin{cases}
 
 \begin{Exercise}
 \begin{enumerate}[label=(\alph*)]
-\item Come up with a way to describe our state space different from the way described in part 2.
-\item How would you represent the elements 123 and 221 from the example in section 2.1?
+\item Come up with a way to describe our state space that is different from our standard way (see part 2.2).
+\item How would you represent the elements 123 and 221?
 \item Using your notation, how many elements would your state space have? 
 \end{enumerate}
 \end{Exercise}
 \begin{Answer}
 \begin{enumerate}[label=(\alph*)]
-\item One possibility is $i_1 ... i_n$, where$ i_k$ counts the number of times element k is picked. Notice that, in this case, $\sum i_k = n$. 
+\item One possibility is $i_1 ... i_n$, where $i_k$ counts the number of times element k is picked. Notice that, in this case, $\sum i_k = n$. 
 \item 123 means we have a sample from each, so the representation would be 111. The representation of 221 would be 021.
-\item We will not have as many as $3^3$ possibilities as with our standard notation because of our constraint that $\sum i_k = n$. Rather, the possible states are in a bijection with the number of permutations of "2 bars and 3 balls": $O|O|O$. 
+\item We will not have as many as $3^3$ possibilities as with our standard notation because of our constraint that $\sum i_k = n$. Rather, the possible states are in a bijection with the number of permutations of ``2 bars and 3 balls": $O|O|O$. 
 For instance, 111 and 021 are represented by $O|O|O$ and $|OO|O$, respectively. Think of this as 2 bars separating a total of 3 balls into 3 groups. 
 Therefore, we have a total of $\frac{5!}{3!2!} = \binom{5}{3}$ elements.
-For the general case, where an element is describe as n entries adding up to n, we have $\binom{2n-1}{n}$ elements in our state space.
+For the general case, where an element is described as n entries adding up to n, we have $\binom{2n-1}{n}$ elements in our state space.
 \end{enumerate}
 \end{Answer}
 
 \begin{Exercise}
-Let $E = \{1, 2, ..., n\}$. Let a state $j = j_1...j_n$ be accessible from a state $i = i_1...i_n$ if $\{j_1, ..., j_n\} \subset E \setminus \{i_1, ..., i_n\} $. Define the kernel $K(i, \{j\})$ as: uniformly pick an accessible state y from state x. 
+Let $E = \{1, 2, ..., n\}$. Let a state $j = j_1...j_n$ be accessible from a state $i = i_1...i_n$ if $\{j_1, ..., j_n\} \subset E \setminus \{i_1, ..., i_n\} $. Define the kernel $K(i, \{j\})$ as: uniformly pick an accessible state j from state i. 
 \begin{enumerate}[label=(\alph*)]
 \item List (or draw) the states that communicate with 1441.
 \item Argue that this chain is not irreducible.
-\item If you were to simulate such a chain, how can you make it irreducible without changing the kernel "too much" (I mean, try not to create a whole new kernel)?
+\item If you were to simulate such a chain, how can you make it irreducible by making a small adaptation that fixes the problem you saw in part b?
 \end{enumerate}
 \end{Exercise}
 \begin{Answer}
 \begin{enumerate}[label=(\alph*)]
-\item The values that don't show up in 1441 are 1 and 2, so the the states that communicate with 1441 are: 2222, 2223, 2232, 2233, 2322, 2323, 2333, 3333.
+\item The values that do not appear in 1441 are 2 and 3, so the the states that communicate with 1441 are: 2222, 2223, 2232, 2233, 2322, 2323, 2333, 3333.
 \item The chain is not irreducible because no state communicates with 1234.
 \item The chain works fine, except for this problem with state 1234, so we need to find a way for other states to reach it and for them to be reached by it. One possibility is to always give a small possibility p for any state to access it and a uniform chance for it to access any of the other $4^4-1$ states. Any p is fine as long as the kernel stays a probability measure.
 \end{enumerate}

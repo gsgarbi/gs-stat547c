@@ -64,7 +64,7 @@ hist(bmeans, breaks = 20)
 
 \subsection{Markov Chains}
 
-The following the definitions and properties will be the base to the the second part of this project. The definitions and theorems in this section use as guide professors Ben's and Gyer's notes. I chose to add them here, even if not in depth, because they provide notions or vocabulary necessary to understand part 2.
+The following definitions and properties will be the base to the the second part of this project. The definitions and theorems in this section use as guide professors Ben's and Geyer's notes. I chose to add them here, even if not in depth, because they provide notions or vocabulary necessary to understand part 2.
 
 \subsubsection{Transition Kernel}\label{kernel_section}
 
@@ -82,7 +82,7 @@ Given a measure $\lambda$, a measurable function f and kernels K, L, we have:
 \begin{enumerate}[label=\alph*)]
 \item$ \lambda K (B)  \overset{def}{=} \int \lambda(dx)K(x, B), B \in \calE.$ This operation will produce the \textbf{new measure} $\lambda K$.
 
-\item$KL(x, B) \overset{def}{=} \int K(x, dy)L(y, B), B \in \calE.$. This operation will produce the \textbf{new kernel} $KL$. Notice that, by definition, $KL \neq LK$.
+\item$KL(x, B) \overset{def}{=} \int K(x, dy)L(y, B), B \in \calE$. This operation will produce the \textbf{new kernel} $KL$. Notice that, by definition, $KL \neq LK$.
  
 \item$Kf \overset{def}{=} \int K(x, dy)f(y)$ given that the integral exists. This operation will produce the \textbf{new measurable function} $Kf$. 
 
@@ -94,7 +94,7 @@ Special attention is given to \textbf{finite state spaces} in this section as th
 
 A stochastic process $X_1, X_2, ...$ taking values in a measurable space, which is called the \textbf{state space}, is a \textbf{Markov chain} if the conditional distribution of the future given the past and present depends only on the present.
 
-\textbf{Notation:} We assume the conditional distribution of $X_{n+1}$ given $X_n$ is given by a \textbf{Markov kernel P}, which is just a kernel that has a few extra properties. We will discuss more about it in the second part of the project.
+\textbf{Notation:} We assume the conditional distribution of $X_{n+1}$ given $X_n$ is given by a \textbf{Markov kernel P}, which is just a kernel that has a few extra properties. We discuss more about it in 2.2.2.
 
 \subsubsection{Finite state space: operations}
 In section \ref{alg_kernels}, we defined operations in a familiar way, for instance being careful with the side by which we performed products, the same way we do when multiplying matrices. If we treat measurable functions as column vectors, kernels as matrices, and (probability) measures as row vectors, the operations work the same as the way we learned in a linear algebra course.
@@ -111,7 +111,7 @@ $ P (x_i, x_{i+1}) > 0, i = 1, ... , n - 1$.
 If there exists a state y such that there is a path from x to y for every $x \in E$, then the kernel is irreducible.
 
 \subsubsection{Theorem: Irreducible kernels and invariant measures}
-A measure $\lambda$ is invariant (by a kernel K) if $\lambda K = \lambda$. If a Markov kernel is irreducible and has an invariant measure, then the invariant measure is unique up to multiplication by positive constants. A proof can be seen in Theorems 10.0.1 and 10.1.2 in Meyn and Tweedie (2009), which can be found in Gyer's notes.
+A measure $\lambda$ is invariant (by a kernel K) if $\lambda K = \lambda$. If a Markov kernel is irreducible and has an invariant measure, then the invariant measure is unique up to multiplication by positive constants. A proof can be seen in Theorems 10.0.1 and 10.1.2 in Meyn and Tweedie (2009), which can be found in Geyer's notes.
 
 %\subsubsection{Definition of Stationary Transition Probability}
 %A Markov chain has stationary transition probabilities if the conditional distribution of $X_{n+1}$ given $X_n$ does not depend on n.
@@ -120,7 +120,7 @@ A measure $\lambda$ is invariant (by a kernel K) if $\lambda K = \lambda$. If a 
 \subsection{Estimation and variation}
 In this section we will discuss a little notation and terminology used in estimation.
 
-Assume we have an irreducible, Markov chain with discrete and finite states 1, ..., S. Recall that irreducibility guarantees that if there's an invariant measure $\pi$ for our kernel P, then that invariant measure is unique. Let f be a measurable function. Define A as:
+Assume we have an irreducible Markov chain with discrete and finite states 1, ..., S. Recall that irreducibility guarantees that if there's an invariant measure $\pi$ for our kernel P, then that invariant measure is unique. Let f be a measurable function. Define A as:
 
 \[
 A = E_{\pi}[f(X)] =  \sum_{i=1}^S f(i) \pi
